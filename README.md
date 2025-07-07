@@ -1,46 +1,51 @@
-A minimal Flask-based service that calculates the total value of a cryptocurrency portfolio in a given fiat currency, fetching rates from the Buda API.
+# Buda Portfolio API
 
-Prerequisites
+A minimal FastAPI service that calculates the total value of a cryptocurrency portfolio in a given fiat currency, fetching rates from the Buda API.  
+Interactive docs are available at:
 
-• Python 3.8 or higher
-• pip
+  • Swagger UI → http://127.0.0.1:5001/docs  
+  • Redoc      → http://127.0.0.1:5001/redoc  
 
-1. a) Clone this repo:
+## Prerequisites
 
+• Python 3.8 or higher  
+• pip  
 
-	git clone https://github.com/your-username/BudaTarea.git
-	cd BudaTarea
+## 1. Clone & Prepare
 
+```bash
+git clone https://github.com/your-username/BudaTarea.git
+cd BudaTarea
+```
 
+(Optional) Create & activate a virtual environment:
 
-1. b) 
-(Optional) Create and activate a virtual environment:
+```bash
+python -m venv .venv
+source .venv/bin/activate    # macOS / Linux
+.venv\Scripts\activate       # Windows
+```
 
+## 2. Install Dependencies
 
-	python -m venv .venv
-	source .venv/bin/activate   # macOS/Linux
-	.venv\Scripts\activate      # Windows
+Install runtime dependencies:
 
+```bash
+pip install -r requirements.txt
+```
 
+## 3. Run Server
 
-1. c)
-Install project dependencies:
+To tun server on port 5001
 
+```bash
+uv run uvicorn server.main:app --host 0.0.0.0 --port 5001
+```
 
-	pip install -r requirements.txt
+## 4. Run Tests
 
+Run Tests
 
-
-
-2. Run the Server
-
-From the project root, start the Flask app via, it listens on http://127.0.0.1:5001:
-
-	python -m server.main
-
-
-3. Test the API
-
-To run it:
-
-	python -m unittest tests/test_root.py -v
+```bash
+python -m unittest tests/test_root.py -v
+```
