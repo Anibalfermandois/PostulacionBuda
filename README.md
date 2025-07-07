@@ -18,20 +18,12 @@ git clone https://github.com/your-username/BudaTarea.git
 cd BudaTarea
 ```
 
-(Optional) Create & activate a virtual environment:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate    # macOS / Linux
-.venv\Scripts\activate       # Windows
-```
-
 ## 2. Install Dependencies
 
-Install runtime dependencies:
+Install uv package manager:
 
 ```bash
-pip install -r requirements.txt
+pip install uv
 ```
 
 ## 3. Run Server
@@ -47,5 +39,5 @@ uv run uvicorn server.main:app --host 0.0.0.0 --port 5001
 Run Tests
 
 ```bash
-python -m unittest tests/test_root.py -v
+uv run -m unittest tests/test_root.py -v
 ```
