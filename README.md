@@ -3,13 +3,13 @@
 A minimal FastAPI service that calculates the total value of a cryptocurrency portfolio in a given fiat currency, fetching rates from the Buda API.  
 Interactive docs are available at:
 
-  • Swagger UI → http://127.0.0.1:5001/docs  
-  • Redoc      → http://127.0.0.1:5001/redoc  
+• Swagger UI → http://127.0.0.1:5001/docs  
+ • Redoc → http://127.0.0.1:5001/redoc
 
 ## Prerequisites
 
-• Python 3.8 or higher  
-• pip  
+• Python 3.10 or higher  
+• pip
 
 ## 1. Clone & Prepare
 
@@ -40,4 +40,21 @@ Run Tests
 
 ```bash
 uv run -m unittest tests/test_root.py -v
+```
+
+# Try the remote site:
+on https://postulacionbuda.onrender.com/
+
+```bash
+curl --location 'https://postulacionbuda.onrender.com/' \
+--header 'Content-Type: application/json' \
+--data '{
+	"portfolio": {
+		"BTC": 0.1,
+		"ETH": 2.0,
+		"USDT": 1000
+	},
+	"fiat_currency": "CLP"
+}
+'
 ```
